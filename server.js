@@ -6,8 +6,8 @@ import mongoose from "mongoose";
 import User from "./user.js";
 
 const app = Express();
-mongoose.set("strictQuery", false);
 
+mongoose.set("strictQuery", false);
 mongoose.connect(
      "mongodb+srv://test:f9LG4KS19iIfT9ta@cluster0.hoqxjop.mongodb.net/?retryWrites=true&w=majority",
      {
