@@ -5,6 +5,16 @@ import cors from "cors";
 import mongoose from "mongoose";
 import User from "./user.js";
 
+import url from "url";
+
+function fullUrl(req) {
+     return url.format({
+          protocol: req.protocol,
+          host: req.get("host"),
+          pathname: req.originalUrl,
+     });
+}
+
 const app = Express();
 
 mongoose.set("strictQuery", false);
@@ -28,6 +38,7 @@ app.use(cors());
 app.use(bodyParser.json({}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(fullUrl());
 
 app.post("/", async (req, res) => {
      const { email, password } = req.body;
