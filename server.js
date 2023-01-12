@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import mongoose from "mongoose";
 import User from "./user.js";
+import https from "https";
 
 console.log("running app file");
 
@@ -52,8 +53,12 @@ app.post("/", async (req, res) => {
      });
 });
 
-app.listen(8080, () => {
-     console.log("server is running...");
+// app.listen(8080, () => {
+//      console.log("server is running...");
+// });
+
+https.createServer(app).listen(8080, () => {
+     console.log("server");
 });
 
 console.log("completing app file");
