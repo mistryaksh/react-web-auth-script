@@ -1,11 +1,23 @@
-const Express = require("express");
-const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser");
-const cors = require("cors");
+import Express from "express";
+import bodyParser from "body-parser";
+import cookieParser from "cookie-parser";
+import cors from "cors";
+import mongoose from "mongoose";
+import User from "./user.js";
 
 const app = Express();
 
-mongoose.connect("mongodb+srv://test:f9LG4KS19iIfT9ta@cluster0.hoqxjop.mongodb.net/?retryWrites=true&w=majority", {});
+mongoose.connect(
+     "mongodb+srv://test:f9LG4KS19iIfT9ta@cluster0.hoqxjop.mongodb.net/?retryWrites=true&w=majority",
+     {},
+     (err) => {
+          if (err) {
+               console.log(err);
+          } else {
+               console.log("connected to database...");
+          }
+     }
+);
 
 app.use(cors());
 
