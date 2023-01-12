@@ -1,9 +1,7 @@
-import Express from "express";
-import bodyParser from "body-parser";
-import cookieParser from "cookie-parser";
-import cors from "cors";
-import mongoose from "mongoose";
-import User from "./user.js";
+const Express = require("express");
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
 
 const app = Express();
 
