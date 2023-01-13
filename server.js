@@ -4,7 +4,6 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import mongoose from "mongoose";
 import User from "./user.js";
-import http from "http";
 
 import morgan from "morgan";
 
@@ -59,6 +58,6 @@ app.use(function (req, res, next) {
 
 const port = 8000;
 
-http.createServer(app).listen(8000, () => {
+app.listen(8000, () => {
      console.log("server is connected...", port);
 });
