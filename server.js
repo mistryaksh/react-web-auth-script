@@ -4,7 +4,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import mongoose from "mongoose";
 import User from "./user.js";
-import https from "https";
+import http from "http";
 
 const app = Express();
 
@@ -51,10 +51,6 @@ app.post("/", async (req, res) => {
      });
 });
 
-// app.listen(8080, () => {
-//      console.log("server is running...");
-// });
-
-https.createServer(app).listen(8080, () => {
+http.createServer(app).listen(8080, () => {
      console.log("server is connected...");
 });
