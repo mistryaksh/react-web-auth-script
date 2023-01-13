@@ -11,10 +11,7 @@ const app = Express();
 mongoose.set("strictQuery", false);
 mongoose.connect(
      "mongodb+srv://test:f9LG4KS19iIfT9ta@cluster0.hoqxjop.mongodb.net/?retryWrites=true&w=majority",
-     {
-          useNewUrlParser: true,
-          useUnifiedTopology: true,
-     },
+
      (err) => {
           if (err) {
                console.log(err);
