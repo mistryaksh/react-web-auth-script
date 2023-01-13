@@ -66,6 +66,7 @@ app.use(function (req, res, next) {
                message: "No page found",
           });
      }
+     next();
 });
 
 app.listen(5000, () => {
