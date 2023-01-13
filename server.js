@@ -27,7 +27,7 @@ app.use(bodyParser.json({}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.post("/", async (req, res) => {
+app.get("/", async (req, res) => {
      return res.status(200).json({
           message: "Try post request for more response",
      });
