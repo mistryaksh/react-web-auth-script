@@ -28,8 +28,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.post("/", async (req, res) => {
+     return res.status(200).json({
+          message: "Try post request for more response",
+     });
+});
+
+app.post("/", async (req, res) => {
      const { email, password } = req.body;
      const user = await User.findOne({ email: email });
+
+     if (!email || !password) {
+          return res.status(401).json({
+               message: "email and password are not provided",
+          });
+     }
 
      if (!user) {
           return res.status(401).json({
