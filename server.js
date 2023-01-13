@@ -6,6 +6,8 @@ import mongoose from "mongoose";
 import User from "./user.js";
 import http from "http";
 
+import morgan from "morgan";
+
 const app = Express();
 
 mongoose.set("strictQuery", false);
@@ -22,7 +24,7 @@ mongoose.connect(
 );
 
 app.use(cors());
-
+app.use(morgan("dev"));
 app.use(bodyParser.json({}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
