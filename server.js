@@ -6,8 +6,6 @@ import mongoose from "mongoose";
 import User from "./user.js";
 import https from "https";
 
-console.log("running app file");
-
 const app = Express();
 
 mongoose.set("strictQuery", false);
@@ -58,7 +56,5 @@ app.post("/", async (req, res) => {
 // });
 
 https.createServer(app).listen(8080, () => {
-     console.log("server");
+     console.log("server is connected...");
 });
-
-console.log("completing app file");
