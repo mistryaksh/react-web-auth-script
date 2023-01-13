@@ -57,6 +57,8 @@ app.use(function (req, res, next) {
      }
 });
 
+const port = 8000;
+
 http.createServer(app).listen(8000, () => {
-     console.log("server is connected...");
+     console.log("server is connected...", port);
 });
