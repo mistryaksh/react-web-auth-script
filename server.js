@@ -51,6 +51,19 @@ app.post("/", async (req, res) => {
      });
 });
 
+app.use(function (req, res, next) {
+     res.status(404);
+
+     // respond with html page
+     // if (req.accepts("html")) {
+     return res.status(404).json("404", {
+          status: "404",
+          message: "Page not found",
+     });
+
+     // }
+});
+
 http.createServer(app).listen(8080, () => {
      console.log("server is connected...");
 });
