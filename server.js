@@ -4,7 +4,6 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import mongoose from "mongoose";
 import User from "./user.js";
-
 import morgan from "morgan";
 
 const app = Express();
