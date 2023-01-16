@@ -69,5 +69,5 @@ app.use(function (req, res, next) {
 });
 
 app.listen(8080, () => {
-     console.log("server is started!", process.env.PORT);
+     console.log("server is started!");
 });
