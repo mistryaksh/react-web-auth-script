@@ -15,6 +15,8 @@ mongoose.connect(
      (err) => {
           if (err) {
                console.log(err);
+          } else {
+               console.log("connected to database!");
           }
      }
 );
@@ -67,4 +69,6 @@ app.use(function (req, res, next) {
      next();
 });
 
-app.listen(8000);
+app.listen(8000, () => {
+     console.log("server is started!");
+});
