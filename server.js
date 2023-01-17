@@ -61,15 +61,6 @@ app.post("/", async (req, res) => {
      });
 });
 
-app.use(function (req, res, next) {
-     if (res.status(404)) {
-          res.status(404).json({
-               message: "No page found",
-          });
-     }
-     next();
-});
-
 app.listen(8080, () => {
      console.log("server is started!");
 });
