@@ -7,6 +7,8 @@ import User from "./user.js";
 import morgan from "morgan";
 
 const app = Express();
+
+console.log("app.js is running");
 mongoose.set("strictQuery", false);
 mongoose.connect(
      "mongodb+srv://test:f9LG4KS19iIfT9ta@cluster0.hoqxjop.mongodb.net/?retryWrites=true&w=majority",
@@ -71,3 +73,5 @@ app.use(function (req, res, next) {
 app.listen(8080, () => {
      console.log("server is started!");
 });
+
+console.log("app.js give last response");
