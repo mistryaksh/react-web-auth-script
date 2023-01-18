@@ -5,10 +5,13 @@ import cors from "cors";
 import mongoose from "mongoose";
 import User from "./user.js";
 import morgan from "morgan";
+import https from "https";
+import fs from "fs";
 
 const app = Express();
 
 console.log("app.js is running");
+
 mongoose.set("strictQuery", false);
 mongoose.connect(
      "mongodb+srv://test:f9LG4KS19iIfT9ta@cluster0.hoqxjop.mongodb.net/?retryWrites=true&w=majority",
@@ -22,7 +25,11 @@ mongoose.connect(
      }
 );
 
-app.use(cors());
+app.use(
+     cors({
+          origin: "http://65.1.112.133:3000/",
+     })
+);
 app.use(morgan("dev"));
 app.use(bodyParser.json({}));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -61,8 +68,18 @@ app.post("/", async (req, res) => {
      });
 });
 
-app.listen(8080, () => {
-     console.log("server is started!");
-});
+// app.listen(8080, () => {
+//      console.log("server is started!");
+// });
 
-console.log("app.js give last response");
+// console.log("app.js give last response");
+
+https.createServer(
+     {
+          key: fs.readFileSync("key.pem"),
+          cert: fs.readFileSync("pem/Aakash-node-app.pem"),
+     },
+     app
+).listen(8080, () => {
+     console.log("server is started");
+});
