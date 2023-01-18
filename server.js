@@ -27,7 +27,7 @@ mongoose.connect(
 
 app.use(
      cors({
-          origin: "http://65.1.112.133:3000/",
+          origin: ["http://65.1.112.133:3000/", "https://react-test-app-1.netlify.app/"],
      })
 );
 app.use(morgan("dev"));
