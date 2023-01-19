@@ -75,10 +75,9 @@ app.post("/", async (req, res) => {
 // });
 
 // console.log("app.js give last response");
-
-
-http.createServer(app).listen(8080);
 https.createServer({
      key: fs.readFileSync("key.pem"),
      cert: fs.readFileSync("pem/Aakash-node-app.pem"),
-}, app).listen(443);
+}, app).listen(8080, () => {
+     console.log('server is running')
+});
