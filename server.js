@@ -27,7 +27,7 @@ mongoose.connect(
 
 app.use(
      cors({
-          origin: ["http://localhost:3000/", "http://localhost:3000", "http://65.1.112.133:3000/", "http://65.1.112.133:3000"],
+          origin: ["http://localhost:3000/", "http://localhost:3000", "https://65.1.112.133:3000/", "https://65.1.112.133:3000"],
           optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
      })
 );
