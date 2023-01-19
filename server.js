@@ -6,7 +6,6 @@ import mongoose from "mongoose";
 import User from "./user.js";
 import morgan from "morgan";
 import https from "https";
-import http from "http";
 import fs from "fs";
 
 const app = Express();
@@ -28,8 +27,8 @@ mongoose.connect(
 
 app.use(
      cors({
-          origin: ["http://localhost:3000/", "http://localhost:3000", "https://65.1.112.133:3000/", "https://65.1.112.133:3000", "https://react-test-app-1.netlify.app/", "https://react-test-app-1.netlify.app"],
-          optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+          origin: ["https://react-test-app-1.netlify.app"],
+          optionsSuccessStatus: 200,
      })
 );
 app.use(morgan("dev"));
@@ -70,11 +69,6 @@ app.post("/", async (req, res) => {
      });
 });
 
-// app.listen(8080, () => {
-//      console.log("server is started!");
-// });
-
-// console.log("app.js give last response");
 https.createServer({
      key: fs.readFileSync("key.pem"),
      cert: fs.readFileSync("pem/Aakash-node-app.pem"),
