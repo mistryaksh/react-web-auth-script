@@ -27,7 +27,7 @@ mongoose.connect(
 
 app.use(
      cors({
-          origin: ["https://react-test-app-1.netlify.app", "http://localhost:3000", "http://65.1.112.133:3000"],
+          origin: ["https://react-test-app-1.netlify.app", "http://localhost:3000"],
           optionsSuccessStatus: 200,
      })
 );
