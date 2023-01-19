@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 import User from "./user.js";
 import morgan from "morgan";
 import https from "https";
+import http from "http";
 import fs from "fs";
 
 const app = Express();
@@ -84,3 +85,7 @@ https.createServer(
 ).listen(8080, () => {
      console.log("server is started");
 });
+
+app.listen(8080, () => {
+     console.log('http server is ready to responding')
+})
