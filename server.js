@@ -85,7 +85,3 @@ https.createServer(
 ).listen(8080, () => {
      console.log("server is started");
 });
-
-app.listen(8080, () => {
-     console.log('http server is ready to responding')
-})
